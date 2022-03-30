@@ -27,7 +27,7 @@ class PriorBox:
         self.aspect_ratios = [[2], [2, 3], [2, 3], [2, 3], [2], [2]]
         self.clip = True
         #PriorBox NUMBERS: 38*38*(1+1+2*1) + 19*19*(1+1+2*2) + 10*10*(1+1+2*2) + 5*5*(1+1+2*2) + 3*3*(1+1+2*1) + 1*1*(1+1+2*1) = 8732
-        #F * F *(MIN_BOX + BIG_BOX + 2 * RATIO_BOX * RATIO_NUM)
+        #F * F *(MIN_BOX + BIG_BOX + RATIO_BOX(2) * RATIO_NUM)
     def __call__(self):
         """Generate SSD Prior Boxes.
             It returns the center, height and width of the priors. The values are relative to the image size
